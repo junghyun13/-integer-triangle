@@ -8,10 +8,8 @@ def solution(triangle):
     data[0][0]=triangle[0][0]
     
     for a in range(0,len(triangle)-1):
-        for b in range(len(triangle[a])):
-            data[a+1][b]=max(data[a+1][b],data[a][b]+triangle[a+1][b])
-            data[a+1][b+1]=max(data[a+1][b+1],data[a][b]+triangle[a+1][b+1]    #data의 계산을 다끝낸 마지막 원소들중에서 최댓값을 가르킴 
-    answer=max(data[-1])  return answer
+        for b in range(len(triangle[a])):data[a+1][b]=max(data[a+1][b],data[a][b]+triangle[a+1][b]) data[a+1][b+1]=max(data[a+1][b+1],data[a][b]+triangle[a+1][b+1])
+     answer=max(data[-1])  return answer #data의 계산을 다끝낸 마지막 원소들중에서 최댓값을 가르킴
 triangle=[[7],[3, 8],[8, 1, 0],[2, 7, 4, 4],[4, 5, 2, 6, 5]]
 x=solution(triangle)
 print(x)
